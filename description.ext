@@ -1,6 +1,6 @@
 class CfgFunctions {
 	class GZM {
-		class gzm_commands {
+		class GZM {
 			class handleRequest {};
 			class showSlots {};
 			class request {};
@@ -9,8 +9,6 @@ class CfgFunctions {
 			class promote {};
 			class revoke {};
 			class showWhitelist {};
-		};
-		class gzm_engine {
 			class isAdmin {};
 			class getFullName {};
 		};

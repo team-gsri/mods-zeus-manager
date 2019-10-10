@@ -9,7 +9,7 @@ params["_nameArray"];
 _nameArray deleteAt 0;
 if(count _nameArray == 0) exitWith { ["No name provided."] remoteExec ["systemChat", remoteExecutedOwner] };
 
-_name = [_nameArray] call GMZ_fnc_getFullName;
+_name = [_nameArray] call GZM_fnc_getFullName;
 
 // Check that given name corresponds to a connected player
 _target = objNull;
@@ -24,7 +24,8 @@ if(isNull _target) then {
 	if(_name in GZM_ZEUS_WHITELIST) then { [format ["%1 was already in the Zeus whitelist.", _name]] remoteExec ["systemChat", remoteExecutedOwner] }
 	else {
 		GZM_ZEUS_WHITELIST pushBack _name;
-		call GZM_fnc_zeusUpdateWhitelist;
+		profileNamespace setVariable ["GZM_ZEUS_WHITELIST", GZM_ZEUS_WHITELIST];
+		publicVariable "GZM_ZEUS_WHITELIST";
 		[format ["%1 has been added to the Zeus whitelist.", _name]] remoteExec ["systemChat", remoteExecutedOwner];
 		["You have been added to the Zeus whitelist."] remoteExec ["systemChat", _target];
 	};

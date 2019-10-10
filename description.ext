@@ -2,16 +2,15 @@ class CfgFunctions {
 	class GZM {
 		class gzm_commands {
 			class handleRequest {};
-			class zeusSlots {};
-			class zeusRequest {};
-			class zeusRelease {};
-			class zeusHelp {};
-			class zeusPromote {};
-			class zeusRevoke {};
-			class zeusList {};
+			class showSlots {};
+			class request {};
+			class release {};
+			class help {};
+			class promote {};
+			class revoke {};
+			class showWhitelist {};
 		};
 		class gzm_engine {
-			class zeusUpdateWhitelist {};
 			class isAdmin {};
 			class getFullName {};
 		};

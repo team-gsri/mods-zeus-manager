@@ -12,7 +12,8 @@ class CfgFunctions {
 		};
 		class gzm_engine {
 			class zeusUpdateWhitelist {};
-			class canPromote {};
+			class isAdmin {};
+			class getFullName {};
 		};
 	};
 };

@@ -1,15 +1,11 @@
 // Remote executed on server only
 if!(isServer) exitWith {};
 // Allow for admins only
-if!([remoteExecutedOwner] call GZM_fnc_canPromote) exitWith { ["Admin command only."] remoteExec ["systemChat", remoteExecutedOwner] };
+if!([remoteExecutedOwner] call GZM_fnc_isAdmin) exitWith { ["Admin command only."] remoteExec ["systemChat", remoteExecutedOwner] };
 
 params["_nameArray"];
 
-// Init name with first array element and removing it
-_name = (_nameArray deleteAt 0);
-
-// Compose the final string by adding all other array elements
-{ _name = format["%1 %2", _name, _x] } forEach _nameArray;
+_name = [_nameArray] call GMZ_fnc_getFullName;
 
 // Check that given name corresponds to a connected player
 _target = objNull;

@@ -3,13 +3,15 @@ if!(isServer) exitWith {};
 // Allow for admins only
 if!([remoteExecutedOwner] call GZM_fnc_isAdmin) exitWith { ["Admin command only."] remoteExec ["systemChat", remoteExecutedOwner] };
 
-params["_nameArray"];
+params["_parameters"];
 
 // Remove the "promote" keyword
-_nameArray deleteAt 0;
-if(count _nameArray == 0) exitWith { ["No name provided."] remoteExec ["systemChat", remoteExecutedOwner] };
+_parameters deleteAt 0;
+if(count _parameters == 0) exitWith { ["No name provided."] remoteExec ["systemChat", remoteExecutedOwner] };
 
-_name = [_nameArray] call GZM_fnc_getFullName;
+// Compose the full entered name
+_name = (_names deleteAt 0);
+{ _name = format["%1 %2", _name, _x] } forEach _names;
 
 // Check that given name corresponds to a connected player
 _target = objNull;

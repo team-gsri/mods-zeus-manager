@@ -2,15 +2,14 @@ class CfgFunctions {
 	class GZM {
 		class GZM {
 			class handleRequest {};
-			class showSlots {};
+			class help {};
 			class request {};
 			class release {};
-			class help {};
 			class promote {};
 			class revoke {};
+			class showSlots {};
 			class showWhitelist {};
 			class isAdmin {};
-			class getFullName {};
 		};
 	};
 };

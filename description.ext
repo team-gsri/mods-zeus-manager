@@ -1,0 +1,18 @@
+class CfgFunctions {
+	class GZM {
+		class gzm_commands {
+			class handleRequest {};
+			class zeusSlots {};
+			class zeusRequest {};
+			class zeusRelease {};
+			class zeusHelp {};
+			class zeusPromote {};
+			class zeusRevoke {};
+			class zeusList {};
+		};
+		class gzm_engine {
+			class zeusUpdateWhitelist {};
+			class canPromote {};
+		};
+	};
+};

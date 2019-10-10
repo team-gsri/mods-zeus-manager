@@ -5,6 +5,10 @@ if!([remoteExecutedOwner] call GZM_fnc_isAdmin) exitWith { ["Admin command only.
 
 params["_nameArray"];
 
+// Remove the "promote" keyword
+_nameArray deleteAt 0;
+if(count _nameArray == 0) exitWith { ["No name provided."] remoteExec ["systemChat", remoteExecutedOwner] };
+
 _name = [_nameArray] call GMZ_fnc_getFullName;
 
 // Check that given name corresponds to a connected player

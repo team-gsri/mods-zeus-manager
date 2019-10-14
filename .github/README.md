@@ -12,7 +12,7 @@ See *How to use these scripts* to get a full description of the manager.
 
 The following documents provide additional information on rules and standards applying to this project :
 
-*   *We are currently in the process of selecting a licence*
+*   [Licensing of this project](./LICENSE.md)
 *   [GSRI code of conduct](https://github.com/team-gsri/CodeOfConduct/blob/master/.github/CODE_OF_CONDUCT.md)
 *   [Contributing to this project](./CONTRIBUTING.md)
 

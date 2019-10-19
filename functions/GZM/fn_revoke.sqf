@@ -3,15 +3,15 @@ if!(isServer) exitWith {};
 // Allow for admins only
 if!([remoteExecutedOwner] call GZM_fnc_isAdmin) exitWith { ["Admin command only."] remoteExec ["systemChat", remoteExecutedOwner] };
 
-params["_parameters"];
+params["_rawString"];
 
 // Remove the "revoke" keyword
-_parameters deleteAt 0;
-if(count _parameters == 0) exitWith { ["No name provided."] remoteExec ["systemChat", remoteExecutedOwner] };
+_rawString deleteAt 0;
+if(count _rawString == 0) exitWith { ["No name provided."] remoteExec ["systemChat", remoteExecutedOwner] };
 
 // Compose the full entered name
-_name = (_names deleteAt 0);
-{ _name = format["%1 %2", _name, _x] } forEach _names;
+_name = (_rawString deleteAt 0);
+{ _name = format["%1 %2", _name, _x] } forEach _rawString;
 
 // Revoke Zeus privilege
 _i = GZM_ZEUS_WHITELIST find _name;

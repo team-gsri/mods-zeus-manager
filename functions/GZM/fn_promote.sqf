@@ -23,9 +23,9 @@ _target = objNull;
 if(isNull _target) then {
 	[format ["%1 has not been found.", _name]] remoteExec ["systemChat", remoteExecutedOwner];
 } else {
-	if(_name in GZM_ZEUS_WHITELIST) then { [format ["%1 was already in the Zeus whitelist.", _name]] remoteExec ["systemChat", remoteExecutedOwner] }
+	if([_name] call GZM_fnc_browseWhitelist >= 0) then { [format ["%1 was already in the Zeus whitelist.", _name]] remoteExec ["systemChat", remoteExecutedOwner] }
 	else {
-		GZM_ZEUS_WHITELIST pushBack _name;
+		GZM_ZEUS_WHITELIST pushBack [_name, getPlayerUID _target];
 		profileNamespace setVariable ["GZM_ZEUS_WHITELIST", GZM_ZEUS_WHITELIST];
 		publicVariable "GZM_ZEUS_WHITELIST";
 		[format ["%1 has been added to the Zeus whitelist.", _name]] remoteExec ["systemChat", remoteExecutedOwner];

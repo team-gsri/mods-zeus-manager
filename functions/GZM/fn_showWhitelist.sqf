@@ -6,6 +6,6 @@ _players = [];
 
 ["List of Zeus allowed players :"] remoteExec ["systemChat", remoteExecutedOwner];
 {
-	_line = format ["   %1 (%2)", _x, ["offline", "ONLINE"] select (_x in _players)];
+	_line = format ["   %1 (%2)", (_x select 0), ["offline", "ONLINE"] select ((_x select 0) in _players)];
 	[_line] remoteExec ["systemChat", remoteExecutedOwner];
 } forEach GZM_ZEUS_WHITELIST;

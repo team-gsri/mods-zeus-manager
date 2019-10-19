@@ -14,9 +14,9 @@ _name = (_rawString deleteAt 0);
 { _name = format["%1 %2", _name, _x] } forEach _rawString;
 
 // Revoke Zeus privilege
-_i = GZM_ZEUS_WHITELIST find _name;
-if(_i >= 0) then {
-	GZM_ZEUS_WHITELIST deleteAt _i;
+_nameCheck = [_name] call GZM_fnc_browseWhitelist;
+if(_nameCheck >= 0) then {
+	GZM_ZEUS_WHITELIST deleteAt _nameCheck;
 	profileNamespace setVariable ["GZM_ZEUS_WHITELIST", GZM_ZEUS_WHITELIST];
 	publicVariable "GZM_ZEUS_WHITELIST";
 	[format ["%1 has been removed from the Zeus whitelist.", _name]] remoteExec ["systemChat", remoteExecutedOwner];

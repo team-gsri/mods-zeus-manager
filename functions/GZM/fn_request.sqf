@@ -4,7 +4,11 @@
 if!(isNull (getAssignedCuratorLogic player)) exitWith { systemChat format["Already assigned to slot %1", (getAssignedCuratorLogic player) getVariable "Name"] };
 
 // Not allowed
-if!(profileName in GZM_ZEUS_WHITELIST) exitWith { systemChat "You are not allowed as a Zeus user." };
+_nameCheck = [profileName] call GZM_fnc_browseWhitelist;
+if(_nameCheck < 0) exitWith { systemChat "You are not allowed as a Zeus user." };
+
+// Name in whitelist but wrong steamID
+if!(getPlayerUID player isEqualTo (GZM_ZEUS_WHITELIST select _nameCheck select 1)) exitWith { systemChat "Your steamID cannot be verified." };
 
 {
 	if(_x getVariable "Name" != "Admin" and isNull (getAssignedCuratorUnit _x)) exitWith {

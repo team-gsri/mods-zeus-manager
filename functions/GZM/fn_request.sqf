@@ -1,3 +1,5 @@
+// Let the player request a Zeus slot
+
 // Already assigned
 if!(isNull (getAssignedCuratorLogic player)) exitWith { systemChat format["Already assigned to slot %1", (getAssignedCuratorLogic player) getVariable "Name"] };
 

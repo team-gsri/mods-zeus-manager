@@ -1,8 +1,8 @@
-// Fonction récupérant une requête Zeus pour la traiter
+// Retreive a Zeus request and launch appropriate function
 
-// Paramètre unique : chaîne de caractères à décomposer
 params["_request"];
 
+// The request string does not include the "zeus" keyword
 _array = _request splitString " ";
 sleep 0.1;
 

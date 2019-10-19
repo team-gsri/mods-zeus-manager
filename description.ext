@@ -1,6 +1,7 @@
 class CfgFunctions {
 	class GZM {
 		class GZM {
+			class initGZM { postInit = 1 };
 			class handleRequest {};
 			class help {};
 			class request {};

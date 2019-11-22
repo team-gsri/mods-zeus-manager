@@ -10,7 +10,7 @@ See *How to use these scripts* to get a full description of the manager.
 ## Rules and standards
 The following documents provide additional information on rules and standards applying to this project :
 
-*   [MIT license](./LICENSE.md)
+*   [MIT license](../LICENSE.md)
 *   [GSRI code of conduct](https://github.com/team-gsri/CodeOfConduct/blob/master/.github/CODE_OF_CONDUCT.md)
 *   [Contributing to this project](./CONTRIBUTING.md)
 

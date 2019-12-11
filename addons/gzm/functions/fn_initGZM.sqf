@@ -12,4 +12,6 @@ if(isServer) then {
 if!(isDedicated) then {
 	// Tracking Zeus commands
 	["zeus", {(_this select 0) spawn GZM_fnc_handleRequest}, "all"] call CBA_fnc_registerChatCommand;
+	// Naming slots
+	{ if(_x getVariable "Name" == "") then { _x setVariable ["Name","Unnamed slot"] } } forEach allCurators;
 };

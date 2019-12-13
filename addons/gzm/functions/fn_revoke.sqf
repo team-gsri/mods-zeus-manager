@@ -19,6 +19,7 @@ if(_nameCheck >= 0) then {
 	GZM_ZEUS_WHITELIST deleteAt _nameCheck;
 	profileNamespace setVariable ["GZM_ZEUS_WHITELIST", GZM_ZEUS_WHITELIST];
 	publicVariable "GZM_ZEUS_WHITELIST";
+	saveProfileNamespace;
 	[format ["%1 has been removed from the Zeus whitelist.", _name]] remoteExec ["systemChat", remoteExecutedOwner];
 } else {
 	[format ["%1 not found in the Zeus whitelist.", _name]] remoteExec ["systemChat", remoteExecutedOwner];

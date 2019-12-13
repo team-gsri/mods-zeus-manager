@@ -28,6 +28,7 @@ if(isNull _target) then {
 		GZM_ZEUS_WHITELIST pushBack [_name, getPlayerUID _target];
 		profileNamespace setVariable ["GZM_ZEUS_WHITELIST", GZM_ZEUS_WHITELIST];
 		publicVariable "GZM_ZEUS_WHITELIST";
+		saveProfileNamespace;
 		[format ["%1 has been added to the Zeus whitelist.", _name]] remoteExec ["systemChat", remoteExecutedOwner];
 		["You have been added to the Zeus whitelist."] remoteExec ["systemChat", _target];
 	};

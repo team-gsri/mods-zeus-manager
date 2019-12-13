@@ -13,6 +13,7 @@ if!(getPlayerUID player isEqualTo (GZM_ZEUS_WHITELIST select _nameCheck select 1
 {
 	if(_x getVariable "Name" != "Admin" and isNull (getAssignedCuratorUnit _x)) exitWith {
 		[player, _x] remoteExec ["assignCurator", 2];
+		[player,"Curator"] call BIS_fnc_setUnitInsignia;
 		systemChat format ["Assigned to slot %1.", _x getVariable "Name"];
 	};
 

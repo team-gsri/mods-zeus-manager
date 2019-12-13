@@ -60,7 +60,7 @@ Otherwise GZM will provide a default name for each unnamed module.
 Also consider modifying the available extensions for each module.
 No further setup is required.
 
-If you want to use GZM when testing you mission, remember it uses game chat, which is **only available in multiplayer mode**.
+If you want to use GZM when testing your mission, remember it uses game chat, which is **only available in multiplayer mode**.
 
 ### Server owners / admins
 [Logged admins](https://community.bistudio.com/wiki/serverCommandAvailable) are the only players allowed to modify the curators whitelist using `#zeus promote` and `#zeus revoke` commands.

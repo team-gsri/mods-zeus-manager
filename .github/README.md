@@ -19,6 +19,11 @@ The following documents provide additional information on rules and standards ap
 *   [GSRI code of conduct](https://github.com/team-gsri/CodeOfConduct/blob/master/.github/CODE_OF_CONDUCT.md)
 *   [Contributing to this project](./CONTRIBUTING.md)
 
+GZM is also avilable on :
+
+*   [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=1937479604)
+*   [Official BI Forums](https://forums.bohemia.net/forums/topic/226163-gsri-zeus-manager/)
+
 ## Credits
 This project has been entirely developped from scratch by __[-GSRI-] Cheitan__. If you are willing to submit your modification of the tool as a pull-request, we will be glad to mention your name and work in this section.
 

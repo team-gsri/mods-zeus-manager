@@ -3,7 +3,7 @@
 params["_request"];
 
 // The request string does not include the "zeus" keyword
-_array = _request splitString " ";
+private _array = _request splitString " ";
 sleep 0.1;
 
 switch (_array select 0) do {

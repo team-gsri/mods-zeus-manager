@@ -4,7 +4,7 @@
 if!(isNull (getAssignedCuratorLogic player)) exitWith { systemChat format["Already assigned to slot %1", (getAssignedCuratorLogic player) getVariable "Name"] };
 
 // Not allowed
-_nameCheck = [profileName] call GZM_fnc_browseWhitelist;
+private _nameCheck = [profileName] call GZM_fnc_browseWhitelist;
 if(_nameCheck < 0) exitWith { systemChat "You are not allowed as a Zeus user." };
 
 // Name in whitelist but wrong steamID

@@ -1,0 +1,37 @@
+name: integration
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - addons/gzm/**
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout files
+      uses: actions/checkout@v2
+
+    - name: Lint sources
+      uses: arma-actions/sqflint@v1.0
+      
+    - name: Binarize config
+      uses: docker://arwynfr/armake2:alpine
+      with:
+        entrypoint: /usr/bin/armake2
+        args: rapify /github/workspace/addons/gzm/config.cpp /github/workspace/addons/gzm/config.bin
+
+    - name: Delete unrapified file
+      run: rm addons/gzm/config.cpp
+
+    - name: Pack addon
+      uses: docker://arwynfr/armake2:alpine
+      with:
+        entrypoint: /usr/bin/armake2
+        args: pack /github/workspace/addons/gzm /github/workspace/addons/gzm.pbo

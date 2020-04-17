@@ -1,7 +1,7 @@
 // General init of both server and clients
 
 // Probably irrelevant to store parameters
-params["_postInit", "_didJIP"];
+// params["_postInit", "_didJIP"];
 
 if(isServer) then {
 	// Broadcast list of allowed Zeus users

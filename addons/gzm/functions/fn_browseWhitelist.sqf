@@ -1,7 +1,7 @@
 // Search the whitelist for a name
 
 params["_name"];
-_position = -1;
+private _position = -1;
 
 // Just check if a player name is in whitelist
 {

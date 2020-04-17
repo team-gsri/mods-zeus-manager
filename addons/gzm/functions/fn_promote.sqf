@@ -10,11 +10,11 @@ _rawString deleteAt 0;
 if(count _rawString == 0) exitWith { ["No name provided."] remoteExec ["systemChat", remoteExecutedOwner] };
 
 // Compose the full entered name
-_name = (_rawString deleteAt 0);
+private _name = (_rawString deleteAt 0);
 { _name = format["%1 %2", _name, _x] } forEach _rawString;
 
 // Check that given name corresponds to a connected player
-_target = objNull;
+private _target = objNull;
 {
 	if(name _x isEqualTo _name) then {_target = _x};
 } forEach allPlayers;

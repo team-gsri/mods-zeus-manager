@@ -16,8 +16,8 @@ See *How to use this addon* to get a full description of the features.
 The following documents provide additional information on rules and standards applying to this project :
 
 *   [MIT license](../LICENSE.md)
-*   [GSRI code of conduct](https://github.com/team-gsri/CodeOfConduct/blob/master/.github/CODE_OF_CONDUCT.md)
-*   [Contributing to this project](./CONTRIBUTING.md)
+*   [GSRI code of conduct](https://github.com/team-gsri/.github/blob/master/CODE_OF_CONDUCT.md)
+*   [GSRI standard contribution guide](https://github.com/team-gsri/.github/blob/master/CONTRIBUTING.md)
 
 GZM is also avilable on :
 

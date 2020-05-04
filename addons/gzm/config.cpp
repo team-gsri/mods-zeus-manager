@@ -26,6 +26,8 @@ class CfgFunctions {
 			class showWhitelist {};
 			class browseWhitelist {};
 			class isAdmin {};
+			class import {};
+			class export {};
 		};
 	};
 };

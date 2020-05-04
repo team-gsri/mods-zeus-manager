@@ -14,5 +14,7 @@ switch (_array select 0) do {
 	case "promote" : {[_array] remoteExecCall ["GZM_fnc_promote", 2] };
 	case "revoke" : {[_array] remoteExecCall ["GZM_fnc_revoke", 2] };
 	case "whitelist" : { [] remoteExecCall ["GZM_fnc_showWhitelist", 2] };
+	case "export" : { [] call GZM_fnc_export };
+	case "import" : { [_array] call GZM_fnc_import };
 	default { [] call GZM_fnc_help };
 };

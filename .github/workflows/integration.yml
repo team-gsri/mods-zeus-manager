@@ -20,6 +20,8 @@ jobs:
 
     - name: Lint sources
       uses: jokoho48/sqflint@master
+      with:
+        args: --exit e --directory addons
       
     - name: Binarize config
       uses: docker://arwynfr/armake2:alpine

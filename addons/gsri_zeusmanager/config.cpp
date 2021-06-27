@@ -14,7 +14,7 @@ class CfgPatches
 class CfgFunctions {
 	class GZM {
 		class GZM {
-			file="\gsri_zeusmanager\functions";
+			file="\fr\gsri\zeusmanager\functions";
 			class initGZM { postInit = 1 };
 			class handleCommand {};
 			class handleRequest {};

@@ -15,13 +15,13 @@ private _nickname = _command deleteAt 0;
 private _steamID = _command # 0;
 private _alreadyExists = (GZM_WHITELIST get _steamID);
 
-if(isNil "_alreadyExists") then {
-	GZM_WHITELIST set [_steamID, _nickname];
-	profileNamespace setVariable ["GZM_WHITELIST", GZM_WHITELIST];
-	saveProfileNamespace;
-	["GZM_acceptedRequest", "SteamID has been whitelisted.", _admin] call CBA_fnc_targetEvent;
-	private _target = _steamID call BIS_fnc_getUnitByUID;
-	if!(isNull _target) then { ["GZM_info", "You have been granted access to Zeus.", _target] call CBA_fnc_targetEvent };
-} else {
+if!(isNil "_alreadyExists") exitWith {
 	["GZM_deniedRequest", "SteamID already whitelisted.", _admin] call CBA_fnc_targetEvent;
 };
+
+GZM_WHITELIST set [_steamID, _nickname];
+profileNamespace setVariable ["GZM_WHITELIST", GZM_WHITELIST];
+saveProfileNamespace;
+["GZM_acceptedRequest", "SteamID has been whitelisted.", _admin] call CBA_fnc_targetEvent;
+private _target = _steamID call BIS_fnc_getUnitByUID;
+if!(isNull _target) then { ["GZM_info", "You have been granted access to Zeus.", _target] call CBA_fnc_targetEvent };

@@ -1,0 +1,61 @@
+name: release
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout files
+      uses: actions/checkout@v2
+
+    - name: Lint sources
+      uses: jokoho48/sqflint@master
+      with:
+        args: --exit e --directory addons
+
+  build:
+    needs: lint
+    runs-on: self-hosted
+    steps:
+
+    - name: Checkout files
+      uses: actions/checkout@v2
+
+    - name: Build addons
+      uses: team-gsri/actions-addon-builder@master
+      with:
+        source: 'addons/gsri_zeusmanager'
+        target: 'addons'
+        includes: '*.paa;*.sqf;*.jpg;*.xml'
+        flags: '"-clear","-prefix=fr\gsri\zeusmanager"'
+
+    - name: Upload pbo files
+      uses: actions/upload-artifact@v2
+      with:
+        name: addons
+        path: addons/*.pbo
+      
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Download pbo files
+      uses: actions/download-artifact@v2
+      with:
+        name: addons
+        path: ./addons
+
+    - name: Create Github release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: >
+        gh release create "ver-${GITHUB_SHA::7}"
+        --title "Version ${GITHUB_SHA::7}"
+        --notes "${{ github.event.head_commit.message }}"
+        --repo ${{ github.repository }}
+        ./addons/*.pbo

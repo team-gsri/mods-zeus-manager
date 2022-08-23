@@ -33,6 +33,7 @@ jobs:
         source: 'addons/gsri_zeusmanager'
         target: 'addons'
         prefix: 'fr\gsri\zeusmanager'
+        includes: '*.paa;*.sqf;*.jpg;*.xml'
 
     - name: Upload pbo files
       uses: actions/upload-artifact@v2

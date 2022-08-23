@@ -7,20 +7,7 @@ on:
     paths: ['addons/**']
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-
-    - name: Checkout files
-      uses: actions/checkout@v2
-
-    - name: Lint sources
-      uses: jokoho48/sqflint@master
-      with:
-        args: --exit e --directory addons
-
-  build:
-    needs: lint
+  release:
     runs-on: [self-hosted, arma-tools]
     steps:
 
@@ -30,8 +17,8 @@ jobs:
     - name: Build addons
       uses: team-gsri/actions-build-addon@0.1.0
       with:
-        source: 'addons/gsri_zeusmanager'
-        target: 'addons'
+        source: ./addons/gsri_zeusmanager
+        target: ./
         prefix: 'fr\gsri\zeusmanager'
         includes: '*.paa;*.sqf;*.jpg;*.xml'
 
@@ -39,20 +26,9 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: addons
-        path: addons/*.pbo
-      
-  release:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-
-    - name: Download pbo files
-      uses: actions/download-artifact@v2
-      with:
-        name: addons
-        path: ./addons
+        path: ./*.pbo
 
     - name: Create Github release
       uses: arwynfr/actions-conventional-versioning@0.1.0
       with:
-        pattern: ./addons/*.pbo
+        pattern: $(Convert-Path *.pbo)

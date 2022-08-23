@@ -51,7 +51,7 @@ jobs:
         name: addons
         path: ./addons
 
-      - name: Create Github release
-        uses: arwynfr/actions-conventional-versioning@0.1.0
-        with:
-            pattern: ./addons/*.pbo
+    - name: Create Github release
+      uses: arwynfr/actions-conventional-versioning@0.1.0
+      with:
+        pattern: ./addons/*.pbo

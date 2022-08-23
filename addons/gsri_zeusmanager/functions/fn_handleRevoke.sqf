@@ -26,4 +26,3 @@ private _target = _steamID call BIS_fnc_getUnitByUID;
 if!(isNull _target) then {
 	["GZM_info", "Your access to Zeus has been revoked.", _target] call CBA_fnc_targetEvent;
 };
-	

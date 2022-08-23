@@ -28,12 +28,12 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Build addons
-      uses: team-gsri/actions-addon-builder@master
+      uses: team-gsri/actions-build-addon@0.1.0
       with:
         source: 'addons/gsri_zeusmanager'
         target: 'addons'
+        prefix: 'fr\gsri\zeusmanager'
         includes: '*.paa;*.sqf;*.jpg;*.xml'
-        flags: '"-clear","-prefix=fr\gsri\zeusmanager"'
 
     - name: Upload pbo files
       uses: actions/upload-artifact@v2
@@ -53,11 +53,6 @@ jobs:
         path: ./addons
 
     - name: Create Github release
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: >
-        gh release create "ver-${GITHUB_SHA::7}"
-        --title "Version ${GITHUB_SHA::7}"
-        --notes "${{ github.event.head_commit.message }}"
-        --repo ${{ github.repository }}
-        ./addons/*.pbo
+      uses: arwynfr/actions-conventional-versioning@0.1.0
+      with:
+        pattern: ./addons/*.pbo

@@ -28,7 +28,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Build addons
-      uses: team-gsri/actions-build-addon@0.0.2
+      uses: team-gsri/actions-build-addon@0.1.0
       with:
         source: 'addons/gsri_zeusmanager'
         target: 'addons'

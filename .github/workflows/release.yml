@@ -23,7 +23,7 @@ jobs:
         includes: '*.paa;*.sqf;*.jpg;*.xml'
 
     - name: Upload pbo files
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: addons
         path: ./*.pbo

@@ -17,8 +17,8 @@ jobs:
     - name: Build addons
       uses: team-gsri/actions-build-addon@0.1.1
       with:
-        source: ./addons/gsri_zeusmanager
-        target: ./
+        source: addons/gsri_zeusmanager
+        target: mod/addons
         prefix: 'fr\gsri\zeusmanager'
         includes: '*.paa;*.sqf;*.jpg;*.xml'
 
@@ -26,9 +26,24 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: addons
-        path: ./*.pbo
+        path: mod/addons/*.pbo
 
     - name: Create Github release
+      id: create-github-release
       uses: arwynfr/actions-conventional-versioning@0.2.1
       with:
-        pattern: $(Convert-Path *.pbo)
+        pattern: $(Convert-Path mod/addons/*.pbo)
+
+    - name: Publish to Steam Workshop
+      uses: team-gsri/actions-publish-mod@0.0.1
+      with:
+        path: mod
+        itemid: 1937479604
+        keyname: GZM
+        modname: GSRI Zeus Manager
+        version: ${{ steps.create-github-release.outputs.next-version }}
+        picture: gsrilogo.paa
+      env:
+        STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
+        STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
+        STEAM_TFASEED: ${{ secrets.STEAM_TFASEED }}

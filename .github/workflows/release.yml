@@ -29,6 +29,6 @@ jobs:
         path: ./*.pbo
 
     - name: Create Github release
-      uses: arwynfr/actions-conventional-versioning@0.1.0
+      uses: arwynfr/actions-conventional-versioning@0.2.1
       with:
         pattern: $(Convert-Path *.pbo)

@@ -3,32 +3,30 @@ name: release
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
-    paths: ['addons/**']
+    branches: [master]
+    paths: ["addons/**"]
 
 jobs:
   release:
     runs-on: [self-hosted, arma-tools]
     steps:
+      - name: Checkout files
+        uses: actions/checkout@v3
 
-    - name: Checkout files
-      uses: actions/checkout@v3
+      - name: Build addons
+        uses: team-gsri/actions-arma-tools/build-addon@v0
+        with:
+          prefix: 'fr\gsri\zeusmanager'
+          source: ./addons/gsri_zeusmanager
+          target: ./
 
-    - name: Build addons
-      uses: team-gsri/actions-build-addon@0.1.1
-      with:
-        source: ./addons/gsri_zeusmanager
-        target: ./
-        prefix: 'fr\gsri\zeusmanager'
-        includes: '*.paa;*.sqf;*.jpg;*.xml'
-
-    - name: Upload pbo files
-      uses: actions/upload-artifact@v3
-      with:
-        name: addons
-        path: ./*.pbo
-
-    - name: Create Github release
-      uses: arwynfr/actions-conventional-versioning@0.2.1
-      with:
-        pattern: $(Convert-Path *.pbo)
+      - name: Deploy mod to GitHub and Workshop
+        uses: team-gsri/actions-arma-tools/release-mod@v0
+        with:
+          source: ./
+          name: GSRI-ZM
+          product: "GSRI Zeus Manager"
+          image: gsrilogo.paa
+          workshopId: ${{ secrets.WORKSHOP_ID }}
+          steam_login: ${{ secrets.STEAM_LOGIN }}
+          steam_password: ${{ secrets.STEAM_PASSWD }}

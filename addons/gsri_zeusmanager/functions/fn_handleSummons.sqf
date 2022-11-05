@@ -48,7 +48,7 @@ if(_command == "promote") exitWith {
     private _nameCheck = _whitelist getOrDefault [_steamID, ""];
     if(_nameCheck != "") then {
         _answerData = ["STR_GSRI_ZeusManager_answers_alreadyWhitelisted", _nameCheck];
-    } else { if !(_steamID regexMatch "^[0-9]*") then {
+    } else { if !(_steamID regexMatch "^[0-9]+") then {
         _answerData = ["STR_GSRI_ZeusManager_answers_invalidSteamid"];
     } else {
         _whitelist set [_steamID, _nickname];
@@ -105,7 +105,7 @@ if(_command == "import") exitWith {
     if(_replaceWhitelist) then { _whitelist = createHashMap };
     {
         private _nameCheck = _whitelist getOrDefault [_x select 0, ""];
-        if((_nameCheck == "") && (_x select 0 regexMatch "^[0-9]*") && !(_x select 1 in values _whitelist)) then {
+        if((_nameCheck == "") && (_x select 0 regexMatch "^[0-9]+") && !(_x select 1 in values _whitelist)) then {
             _whitelist set [_x select 0, _x select 1];
             _imported = _imported + 1;
         };

@@ -4,8 +4,8 @@ private _whitelist = profileNamespace getVariable ["GSRI_ZeusManager_Whitelist",
 params["_player", "_fullCommand"];
 _fullCommand params [
     "_command",
-    ["_nickname"],
-    ["_steamID",0]
+    "_nickname",
+    ["_steamID",""]
 ];
 
 private _answerData = "";
@@ -61,7 +61,7 @@ if(_command == "promote") exitWith {
 if(_command == "revoke") exitWith {
     // Hashes are not reversible, this is a dirty workaround in order to find what key to delete
     { if(_nickname == _y) exitWith { _steamID = _x } } forEach _whitelist;
-    if(_steamID != 0) then { 
+    if(_steamID != "") then { 
         _whitelist deleteAt _steamID;
         profileNamespace setVariable ["GSRI_ZeusManager_Whitelist", _whitelist];
         saveProfileNamespace;

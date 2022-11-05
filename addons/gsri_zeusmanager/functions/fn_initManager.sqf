@@ -35,5 +35,11 @@ if!(isDedicated) then {
         ["GSRI_ZeusManager_summoned", [player, _fullCommand]] call CBA_fnc_serverEvent;
     }, "all"] call CBA_fnc_registerChatCommand;
 
-    ["GSRI_ZeusManager_answered", {_this spawn {sleep 0.1; systemChat _this}}] call CBA_fnc_addEventHandler;
+    ["GSRI_ZeusManager_answered", {_this spawn {
+        private _string = _this select 0;
+        _this set [0, localize _string];
+        // A pause is needed so the command recall is displayed before the help lines
+        sleep 0.1;
+        systemChat format _this;
+    }}] call CBA_fnc_addEventHandler;
 };

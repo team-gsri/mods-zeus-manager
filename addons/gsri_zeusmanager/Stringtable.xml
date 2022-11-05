@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Project name="GSRI-ZeusManager">
+  <Package name="GSRI-ZeusManager-docs">
+    <Key ID="STR_GSRI_ZeusManager_docs_usage">
+      <Original>Usage : #zeus &lt;command&gt; [params], available commands are :</Original>
+      <English>Usage : #zeus &lt;command&gt; [params], available commands are :</English>
+      <French>Usage : #zeus &lt;command&gt; [params], les commandes sont :</French>
+    </Key>
+    <Key ID="STR_GSRI_ZeusManager_docs_request">
+      <Original>: get Zeus privileges (if whitelisted)</Original>
+      <English>: get Zeus privileges (if whitelisted)</English>
+      <French>: obtenir les droits Zeus (si autorisé·e)</French>
+    </Key>
+    <Key ID="STR_GSRI_ZeusManager_docs_release">
+      <Original>: give up Zeus privileges</Original>
+      <English>: give up Zeus privileges</English>
+      <French>: abandonner les droits Zeus</French>
+    </Key>
+    <Key ID="STR_GSRI_ZeusManager_docs_help">
+      <Original>: display this documentation</Original>
+      <English>: display this documentation</English>
+      <French>: affiche cette documentation</French>
+    </Key>
+    <Key ID="STR_GSRI_ZeusManager_docs_promote">
+      <Original>&lt;nickname&gt; &lt;SteamID&gt; : whitelist &lt;SteamID&gt; under &lt;nickname&gt;</Original>
+      <English>&lt;nickname&gt; &lt;SteamID&gt; : whitelist &lt;SteamID&gt; under &lt;nickname&gt;</English>
+      <French>&lt;surnom&gt; &lt;SteamID&gt; : autorise &lt;SteamID&gt; en tant que &lt;surnom&gt;</French>
+    </Key>
+    <Key ID="STR_GSRI_ZeusManager_docs_revoke">
+      <Original>&lt;nickname&gt; : remove &lt;nickname&gt; from the whitelist</Original>
+      <English>&lt;nickname&gt; : remove &lt;nickname&gt; from the whitelist</English>
+      <French>&lt;surnom&gt; : retire &lt;surnom&gt; des autorisé·es</French>
+    </Key>
+    <Key ID="STR_GSRI_ZeusManager_docs_whitelist">
+      <Original>: display the content of the current whitelist</Original>
+      <English>: display the content of the current whitelist</English>
+      <French>: affiche les personnes actuellement autorisées</French>
+    </Key>
+  </Package>
+  <Package name="GSRI-ZeusManager-answers">
+    <Key ID="STR_GSRI_ZeusManager_answers_alreadyAssigned">
+      <Original>You already have Zeus access.</Original>
+      <English>You already have Zeus access.</English>
+      <French>Vous avez déjà accès à Zeus.</French>
+    </Key>
+    <Key ID="STR_GSRI_ZeusManager_answers_notAllowed">
+      <Original>You are not allowed to access Zeus.</Original>
+      <English>You are not allowed to access Zeus.</English>
+      <French>Vous n'êtes pas autorisé·e à accéder à Zeus.</French>
+    </Key>
+    <Key ID="STR_GSRI_ZeusManager_answers_granted">
+      <Original>You have been granted Zeus access.</Original>
+      <English>You have been granted Zeus access.</English>
+      <French>Vous êtes autorisé·e à accéder à Zeus.</French>
+    </Key>
+    <Key ID="STR_GSRI_ZeusManager_answers_notAssigned">
+      <Original>You had no access to Zeus.</Original>
+      <English>You had no access to Zeus.</English>
+      <French>Vous n'aviez pas accès à Zeus.</French>
+    </Key>
+    <Key ID="STR_GSRI_ZeusManager_answers_unassigned">
+      <Original>You don't have access to Zeus anymore.</Original>
+      <English>You don't have access to Zeus anymore.</English>
+      <French>Vous n'avez désormais plus accès à Zeus.</French>
+    </Key>
+    <Key ID="STR_GSRI_ZeusManager_answers_alreadyWhitelisted">
+      <Original>SteamID already whitelisted as %1.</Original>
+      <English>SteamID already whitelisted as %1.</English>
+      <French>SteamID déjà autorisé en tant que %1.</French>
+    </Key>
+    <Key ID="STR_GSRI_ZeusManager_answers_whitelisted">
+      <Original>This SteamID is now whitelisted as %1.</Original>
+      <English>This SteamID is now whitelisted as %1.</English>
+      <French>Ce SteamID est désormais autorisé en tant que %1.</French>
+    </Key>
+    <Key ID="STR_GSRI_ZeusManager_answers_revoked">
+      <Original>SteamID associated to %1 has been revoked.</Original>
+      <English>SteamID associated to %1 has been revoked.</English>
+      <French>SteamID associé à %1 révoqué avec succès.</French>
+    </Key>
+    <Key ID="STR_GSRI_ZeusManager_answers_steamidNotFound">
+      <Original>No SteamID associated to %1 has been found.</Original>
+      <English>No SteamID associated to %1 has been found.</English>
+      <French>Aucun SteamID n'est associé à %1.</French>
+    </Key>
+    <Key ID="STR_GSRI_ZeusManager_answers_emptyWhitelist">
+      <Original>Whitelist is currently empty.</Original>
+      <English>Whitelist is currently empty.</English>
+      <French>La liste d'autorisation est vide.</French>
+    </Key>
+    <Key ID="STR_GSRI_ZeusManager_answers_whitelistEntry">
+      <Original>Nickname : %1, SteamID : %2.</Original>
+      <English>Nickname : %1, SteamID : %2.</English>
+      <French>Surnom : %1, SteamID : %2.</French>
+    </Key>
+  </Package>
+</Project>

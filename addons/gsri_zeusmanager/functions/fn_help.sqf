@@ -9,6 +9,8 @@ if(count _docs == 0) then {
     _docs set ["promote", "STR_GSRI_ZeusManager_docs_promote"];
     _docs set ["revoke", "STR_GSRI_ZeusManager_docs_revoke"];
     _docs set ["whitelist", "STR_GSRI_ZeusManager_docs_whitelist"];
+    _docs set ["import", "STR_GSRI_ZeusManager_docs_import"];
+    _docs set ["export", "STR_GSRI_ZeusManager_docs_export"];
     missionNamespace setVariable ["GSRI_ZeusManager_Docs", _docs];
 };
 

@@ -84,3 +84,33 @@ if(_command == "whitelist") exitWith {
         } forEach _whitelist;
     };
 };
+
+// Admin is exporting the whitelist
+if(_command == "export") exitWith {
+    [
+        "GSRI_ZeusManager_ImportHelper",
+        str _whitelist,
+        0,
+        "server",
+        false
+    ] call CBA_settings_fnc_set;
+    ["GSRI_ZeusManager_answered", ["STR_GSRI_ZeusManager_answers_whitelistExported"], _player] call CBA_fnc_targetEvent;
+};
+
+// Admin is importing the whitelist from the helper
+if(_command == "import") exitWith {
+    private _toImport = parseSimpleArray (["GSRI_ZeusManager_ImportHelper", "server"] call CBA_settings_fnc_get);
+    private _replaceWhitelist = ["GSRI_ZeusManager_ImportForcer", "server"] call CBA_settings_fnc_get;
+    private _imported = 0;
+    if(_replaceWhitelist) then { _whitelist = createHashMap };
+    {
+        private _nameCheck = _whitelist getOrDefault [_x select 0, ""];
+        if((_nameCheck == "") && (_x select 0 regexMatch "^[0-9]*") && !(_x select 1 in values _whitelist)) then {
+            _whitelist set [_x select 0, _x select 1];
+            _imported = _imported + 1;
+        };
+    } forEach _toImport;
+    profileNamespace setVariable ["GSRI_ZeusManager_Whitelist", _whitelist];
+    saveProfileNamespace;
+    ["GSRI_ZeusManager_answered", ["STR_GSRI_ZeusManager_answers_whitelistImported", _imported, count _toImport], _player] call CBA_fnc_targetEvent;
+};

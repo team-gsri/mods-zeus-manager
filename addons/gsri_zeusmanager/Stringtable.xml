@@ -36,6 +36,16 @@
       <English>: display the content of the current whitelist</English>
       <French>: affiche les personnes actuellement autorisées</French>
     </Key>
+    <Key ID="STR_GSRI_ZeusManager_docs_import">
+      <Original>: merge the import helper value in the whitelist</Original>
+      <English>: merge the import helper value in the whitelist</English>
+      <French>: intègre la valeur de l'assistant dans la liste d'autorisation</French>
+    </Key>
+    <Key ID="STR_GSRI_ZeusManager_docs_export">
+      <Original>: dump whitelist content in the import helper</Original>
+      <English>: dump whitelist content in the import helper</English>
+      <French>: copie le contenu de la liste dans l'assistant</French>
+    </Key>
   </Package>
   <Package name="GSRI-ZeusManager-answers">
     <Key ID="STR_GSRI_ZeusManager_answers_alreadyAssigned">
@@ -97,6 +107,38 @@
       <Original>Nickname : %1, SteamID : %2.</Original>
       <English>Nickname : %1, SteamID : %2.</English>
       <French>Surnom : %1, SteamID : %2.</French>
+    </Key>
+    <Key ID="STR_GSRI_ZeusManager_answers_whitelistExported">
+      <Original>Whitelist exported to the helper field.</Original>
+      <English>Whitelist exported to the helper field.</English>
+      <French>Liste d'autorisation exportée dans l'assistant.</French>
+    </Key>
+    <Key ID="STR_GSRI_ZeusManager_answers_whitelistImported">
+      <Original>Whitelist imported from the helper field, %1/%2 accepted entries.</Original>
+      <English>Whitelist imported from the helper field, %1/%2 accepted entries.</English>
+      <French>Liste d'autorisation importée depuis l'assistant %1/%2 entrées acceptées.</French>
+    </Key>
+  </Package>
+  <Package name="GSRI-ZeusManager-importHelper">
+    <Key ID="STR_GSRI_ZeusManager_importHelper_title">
+      <Original>Import/export helper</Original>
+      <English>Import/export helper</English>
+      <French>Assistant d'import/export</French>
+    </Key>
+    <Key ID="STR_GSRI_ZeusManager_importHelper_tooltip">
+      <Original>Use this in combination with import/export commands.</Original>
+      <English>Use this in combination with import/export commands.</English>
+      <French>Utilisez ceci en combinaison des commandes d'import/export.</French>
+    </Key>
+    <Key ID="STR_GSRI_ZeusManager_importHelper_forcerTitle">
+      <Original>Replace original whitelist</Original>
+      <English>Replace original whitelist</English>
+      <French>Remplace la liste originale</French>
+    </Key>
+    <Key ID="STR_GSRI_ZeusManager_importHelper_forcerTooltip">
+      <Original>When checked, the preexisting whitelist will be whiped out on import, right before adding the helper data. This will NOT remove existing Zeus accesses.</Original>
+      <English>When checked, the preexisting whitelist will be whiped out on import, right before adding the helper data. This will NOT remove existing Zeus accesses.</English>
+      <French>Si cochée, la liste d'autorisation sera vidée au moment de l'import, juste avant l'ajout des données de l'assistant. Les accès à Zeus existants ne seront PAS supprimés.</French>
     </Key>
   </Package>
 </Project>

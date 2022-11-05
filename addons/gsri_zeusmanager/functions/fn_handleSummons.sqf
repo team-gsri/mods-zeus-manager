@@ -78,7 +78,7 @@ if(_command == "whitelist") exitWith {
         ["GSRI_ZeusManager_answered", "Whitelist is currently empty.", _player] call CBA_fnc_targetEvent;
     } else {
         {
-            ["GSRI_ZeusManager_answered", format ["Player %1 : %2.", _y, _x,], _player] call CBA_fnc_targetEvent;
+            ["GSRI_ZeusManager_answered", format ["Player %1 : %2.", _y, _x], _player] call CBA_fnc_targetEvent;
         } forEach _whitelist;
     };
 };

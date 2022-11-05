@@ -29,7 +29,7 @@ if!(isDedicated) then {
         };
         if(_command == "help") exitWith {
             [_allowedCommands] call gsri_zeusmanager_fnc_help;
-        }
+        };
         if(_command == "promote" && count _fullCommand != 3 ) exitWith {
             [_allowedCommands] call gsri_zeusmanager_fnc_help;
         };

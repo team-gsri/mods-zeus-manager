@@ -68,6 +68,11 @@
       <English>SteamID already whitelisted as %1.</English>
       <French>SteamID déjà autorisé en tant que %1.</French>
     </Key>
+    <Key ID="STR_GSRI_ZeusManager_answers_invalidSteamid">
+      <Original>Not a valid SteamID.</Original>
+      <English>Not a valid SteamID.</English>
+      <French>SteamID invalide.</French>
+    </Key>
     <Key ID="STR_GSRI_ZeusManager_answers_whitelisted">
       <Original>This SteamID is now whitelisted as %1.</Original>
       <English>This SteamID is now whitelisted as %1.</English>

@@ -48,12 +48,14 @@ if(_command == "promote") exitWith {
     private _nameCheck = _whitelist getOrDefault [_steamID, ""];
     if(_nameCheck != "") then {
         _answerData = ["STR_GSRI_ZeusManager_answers_alreadyWhitelisted", _nameCheck];
+    } else { if !(_steamID regexMatch "^[0-9]*") then {
+        _answerData = ["STR_GSRI_ZeusManager_answers_invalidSteamid"];
     } else {
         _whitelist set [_steamID, _nickname];
         profileNamespace setVariable ["GSRI_ZeusManager_Whitelist", _whitelist];
         saveProfileNamespace;
         _answerData = ["STR_GSRI_ZeusManager_answers_whitelisted", _nickname];
-    };
+    }};
     ["GSRI_ZeusManager_answered", _answerData, _player] call CBA_fnc_targetEvent;
 };
 

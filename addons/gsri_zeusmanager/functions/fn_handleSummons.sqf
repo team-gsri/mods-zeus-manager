@@ -104,9 +104,10 @@ if(_command == "import") exitWith {
     private _imported = 0;
     if(_replaceWhitelist) then { _whitelist = createHashMap };
     {
-        private _nameCheck = _whitelist getOrDefault [_x select 0, ""];
-        if((_nameCheck == "") && (_x select 0 regexMatch "^[0-9]+") && !(_x select 1 in values _whitelist)) then {
-            _whitelist set [_x select 0, _x select 1];
+        _x params ["_steamID", "_nickname"];
+        private _nameCheck = _whitelist getOrDefault [_steamID, ""];
+        if((_nameCheck == "") && (_steamID regexMatch "^[0-9]+") && !(_nickname in values _whitelist)) then {
+            _whitelist set [_steamID, _nickname];
             _imported = _imported + 1;
         };
     } forEach _toImport;

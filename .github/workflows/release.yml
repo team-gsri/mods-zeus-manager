@@ -11,7 +11,7 @@ jobs:
     runs-on: [self-hosted, arma-tools]
     steps:
       - name: Checkout files
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Build addons
         uses: team-gsri/actions-arma-tools/build-addon@v0
